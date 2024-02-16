@@ -8,9 +8,9 @@ export default function Home() {
         onClick={async () => {
           const response = await fetch("/api/chat-gpt", {
             method: "POST",
-            body: JSON.stringify({ message: "Hello, i work!" }),
+            body: JSON.stringify({ soneData : true }),
           });
-          console.log(response);
+          console.log("response", response);
         }}
       >
         Generate
