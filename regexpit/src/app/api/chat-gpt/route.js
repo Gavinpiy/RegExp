@@ -6,17 +6,17 @@ export async function POST(request) {
 
   //user input
   const params = await request.json();
-  
-//pass to chatgpt
+
+  //pass to chatgpt
   const response = await openai.chat.completions.create({
     model: "gpt-3.5-turbo",
     messages: [
       {
         role: "system",
         content:
-          "I will be asking you to give me regular expressions for use in javascript. Please be concise and give me the regexp, then after a blank  line give me the explanation of how it works. then after another blank line give me an example of the thing you are searching for ",
+          "I will be asking you to give me regular expressions for use in javascript unless told otherwise. Please be concise and give me the regexp, then give me the explanation of how it works. then give me an example of the thing you are searching for ",
       },
-      { role: "user", content: params.prompt  },//user string
+      { role: "user", content: params.prompt }, //user string
     ],
     temperature: 0,
     max_tokens: 1024,
