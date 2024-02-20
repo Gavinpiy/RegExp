@@ -8,7 +8,7 @@ export default function Home() {
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-start gap-20 p-20 lg:p-36 ">
-      <h1 className="text-4xl font-bold">Welcome to RegExpIt</h1>
+      <h1 className=" text-center text-4xl font-bold">Welcome to RegExpIt</h1>
       <Prompt
         loading={loading}
         onSubmit={async (prompt) => {
