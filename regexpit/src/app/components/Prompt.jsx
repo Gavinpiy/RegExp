@@ -26,12 +26,12 @@ export default function Prompt({ onSubmit, loading }) {
         }}
       />
       <div className="flex justify-end gap-2 items-center">
+        <p className={loading ? "block" : "hidden"}> Loading...</p>
         <input
           type="submit"
           disabled={loading}
           className="bg-white rounded-lg my-1 flex border-solid border-black border-2 p-1 hover:bg-gray-300 hover:border-gray-400 hover:text-black"
         />
-        <p className={loading ? "block" : "hidden"}> Loading...</p>
       </div>
     </form>
   );
