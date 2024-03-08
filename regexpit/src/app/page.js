@@ -8,11 +8,11 @@ export default function Home() {
   const [content, setContent] = useState("");
   const [contentArray, setContentArray] = useState([]);
 
-  useEffect(() => {
-    //console.log(choices);
-    //console.log(content);
-    console.log(contentArray);
-  }, [content]);
+  // useEffect(() => {
+  //   //console.log(choices);
+  //   //console.log(content);
+  //   //console.log(contentArray);
+  // }, [content]);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-start gap-20 p-20 lg:p-36 ">
@@ -68,4 +68,3 @@ export default function Home() {
     </main>
   );
 }
-
