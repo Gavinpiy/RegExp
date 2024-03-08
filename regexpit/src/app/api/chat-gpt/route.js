@@ -14,7 +14,7 @@ export async function POST(request) {
       {
         role: "system",
         content:
-          "I will be asking you to give me regular expressions for use in javascript unless told otherwise. Please be concise and give me in the format of RegExp: RegExp, Explanation: Explanation and Example: Example. Add line breaks for each section.",
+          "I will be asking you to give me regular expressions for use in javascript unless told otherwise. Please be concise and give me in the format of RegExp: RegExp. <br></br> Explanation: Explanation of what the symbols mean <br></br> Example: Example. ",
       },
       { role: "user", content: params.prompt }, //user string
     ],
