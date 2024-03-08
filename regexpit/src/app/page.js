@@ -6,11 +6,13 @@ export default function Home() {
   const [choices, setChoices] = useState([]);
   const [loading, setLoading] = useState(false);
   const [content, setContent] = useState("");
+  const [contentArray, setContentArray] = useState([]);
 
   useEffect(() => {
     //console.log(choices);
-    console.log(content);
-  }, [ content]);
+    //console.log(content);
+    console.log(contentArray);
+  }, [content]);
 
   return (
     <main className="flex min-h-screen flex-col items-center justify-start gap-20 p-20 lg:p-36 ">
@@ -37,6 +39,9 @@ export default function Home() {
             const result = await response.json();
             setChoices(result.choices);
             setContent(result.choices[0].message.content);
+            setContentArray(
+              result.choices[0].message.content.split("<br></br>")
+            );
           } catch (error) {
             if (error && error.error) {
               console.error(error.error.message);
@@ -48,28 +53,19 @@ export default function Home() {
       />
 
       <div>
-        {choices.map((choice) => (
-          <div
-            className="border-solid border-black border-2 rounded-lg p-2 my-2 w-96 overflow-y-auto h-48"
-            key={choice.index}
-          >
-            {choice.message.content}
-          </div>
-        ))}
+        {Array.isArray(contentArray)
+          ? contentArray.map((contentStr, index) => (
+              <div
+                className="border-solid border-black border-2 rounded-lg p-2 my-2 w-96 overflow-y-auto h-auto"
+                key={index}
+              >
+                {contentStr}
+                <br></br>
+              </div>
+            ))
+          : null}
       </div>
     </main>
   );
 }
 
-/* <div className="border-solid border-black border-2 rounded-lg p-2 my-2 w-96 overflow-y-auto h-48">
-      
-      </div> */
-
-{
-  /* <div className="border-solid border-black border-2 rounded-lg p-2 my-2 w-96 overflow-y-auto h-48">
-        RegExp: /^(?:+?44| ? ( ? : 0 ( ? : 0 ∣ 11 ) ?(?:0(?:0∣11)?[\s-]???∣?)?\d
-        {4})?[\s-]?\d{3}[\s-]?\d{3})$/<br></br>Explanation: This regular
-        expression matches UK phone numbers, including different formats such as
-        +44, (0xx) xxx-xxx, etc.<br></br> Example: "+44 1234 567890"
-      </div> */
-}
