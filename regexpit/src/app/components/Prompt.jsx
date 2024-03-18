@@ -5,7 +5,7 @@ export default function Prompt({ onSubmit, loading }) {
   const [prompt, setPrompt] = useState("");
   return (
     <form
-      className=" flex-col p-2 block mx-auto w-[80%] max-w-[700px] border-2 border-black rounded-lg bg-blue-100"
+      className=" flex-col p-2 block mx-auto w-full max-w-[700px] border-2 border-black rounded-lg bg-blue-100"
       onSubmit={(e) => {
         e.preventDefault();
 
