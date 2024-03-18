@@ -5,7 +5,7 @@ export default function Prompt({ onSubmit, loading }) {
   const [prompt, setPrompt] = useState("");
   return (
     <form
-      className=" flex-col p-2 block mx-auto w-full  border-2 border-black rounded-lg bg-gray-200"
+      className=" flex-col p-2 block mx-auto w-[80%] max-w-[700px] border-2 border-black rounded-lg bg-blue-100"
       onSubmit={(e) => {
         e.preventDefault();
 
@@ -30,7 +30,7 @@ export default function Prompt({ onSubmit, loading }) {
         <input
           type="submit"
           disabled={loading}
-          className="bg-white rounded-lg my-1 flex border-solid border-black border-2 p-1 hover:bg-gray-300 hover:border-gray-400 hover:text-black"
+          className="bg-gray-800 rounded-lg my-1 flex border-solid border-black border-2 p-1 text-slate-300 hover:bg-gray-600 hover:border-gray-400 hover:text-white"
         />
       </div>
     </form>

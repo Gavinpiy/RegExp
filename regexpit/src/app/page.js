@@ -15,8 +15,15 @@ export default function Home() {
   // }, [content]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start gap-20 p-20 lg:p-36 ">
-      <h1 className=" text-center text-4xl font-bold">Welcome to RegExpIt</h1>
+    <main className="flex min-h-screen flex-col items-center justify-start gap-20 p-20 lg:p-36 
+    "
+    style={{
+      backgroundImage: `url('/images/background.jpg')`,
+      backgroundPosition: "center",
+      backgroundSize: "cover",
+      backgroundRepeat: "repeat",
+    }}>
+      <h1 className=" text-center text-5xl font-extrabold">Welcome to RegExpIt</h1>
       <Prompt
         loading={loading}
         onSubmit={async (prompt) => {
@@ -56,7 +63,7 @@ export default function Home() {
         {Array.isArray(contentArray)
           ? contentArray.map((contentStr, index) => (
               <div
-                className="border-solid border-black border-2 rounded-lg p-2 my-2 w-96 overflow-y-auto h-auto"
+                className="border-solid border-black border-2 rounded-lg p-2 my-2 w-96 overflow-y-auto h-auto bg-white shadow-sm"
                 key={index}
               >
                 {contentStr}
