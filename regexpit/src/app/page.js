@@ -15,15 +15,41 @@ export default function Home() {
   // }, [content]);
 
   return (
-    <main className="flex min-h-screen flex-col items-center justify-start gap-20 p-20 lg:p-36 
+    <main
+      className="flex min-h-screen flex-col items-center justify-start gap-10 p-20 lg:p-26 
     "
-    style={{
-      backgroundImage: `url('/images/background.jpg')`,
-      backgroundPosition: "center",
-      backgroundSize: "cover",
-      backgroundRepeat: "repeat",
-    }}>
-      <h1 className=" text-center text-5xl font-extrabold">Welcome to RegExpIt</h1>
+      style={{
+        backgroundImage: `url('/images/background.jpg')`,
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundRepeat: "repeat",
+      }}
+    >
+      <h1 className=" text-center text-4xl font-extrabold">
+        Welcome to RegExpIt
+      </h1>
+      <div className="text-center flex flex-col gap-2 border-2 border-black rounded-lg bg-blue-100 p-4">
+        <h2 className="text-center text-xl font-extrabold">Useful Links: </h2>
+        <a
+          href="https://www.w3schools.com/jsref/jsref_match.asp"
+          target="_blank"
+        >
+          String.prototype.match()
+        </a>
+        <a
+          href="https://www.w3schools.com/jsref/jsref_regexp_test.asp"
+          target="_blank"
+        >
+          RegExp.prototype.test()
+        </a>
+        <a
+          href="https://www.w3schools.com/jsref/jsref_search.asp"
+          target="_blank"
+        >
+          String.prototype.search()
+        </a>
+      </div>
+
       <Prompt
         loading={loading}
         onSubmit={async (prompt) => {
